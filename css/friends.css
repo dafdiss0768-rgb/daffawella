@@ -1,0 +1,348 @@
+/* =========================
+   SECRET SECTION
+========================= */
+
+.secret-photo-section{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background: #050505;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 8%;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+/* FOTO */
+.secret-photo-card{
+  position: relative;
+
+  width: 100%;
+  max-width: 950px;
+
+  height: 520px;
+
+  border-radius: 35px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+
+  z-index: 2;
+}
+
+.secret-photo-card img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 1s;
+}
+
+.secret-photo-card:hover img{
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.secret-overlay{
+  position: absolute;
+  inset: 0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.1)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 50px;
+
+  color: white;
+}
+
+.secret-overlay span{
+  color: #aaa;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.secret-overlay h2{
+  font-size: 65px;
+  margin-top: 10px;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.secret-popup{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s;
+
+  z-index: 9999;
+}
+
+.secret-popup.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.secret-popup-box{
+  width: 400px;
+
+  background: #111;
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  text-align: center;
+}
+
+.secret-popup-box span{
+  color: #888;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.secret-popup-box h2{
+  color: white;
+  font-size: 38px;
+
+  margin-top: 15px;
+}
+
+.secret-popup-box input{
+  width: 100%;
+  height: 58px;
+
+  margin-top: 30px;
+
+  border: none;
+  outline: none;
+
+  background: #1a1a1a;
+
+  border-radius: 18px;
+
+  padding: 0 20px;
+
+  color: white;
+}
+
+.secret-popup-box button{
+  width: 100%;
+  height: 58px;
+
+  margin-top: 15px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: white;
+  color: black;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+#secretError{
+  color: red;
+  margin-top: 15px;
+
+  opacity: 0;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.secret-gallery{
+  position: fixed;
+  inset: 0;
+
+  background: #050505;
+
+  padding: 80px 8%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.5s;
+
+  z-index: 9998;
+}
+
+.secret-gallery.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* CLOSE */
+.gallery-close{
+  position: absolute;
+
+  top: 30px;
+  right: 40px;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+/* TOP */
+.secret-gallery-top{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secret-gallery-top span{
+  color: #777;
+  letter-spacing: 4px;
+}
+
+.secret-gallery-top h2{
+  color: white;
+  font-size: 60px;
+
+  margin-top: 15px;
+}
+
+/* SCROLL */
+.secret-scroll-gallery{
+  height: 72vh;
+
+  overflow-y: auto;
+
+  padding-right: 10px;
+}
+
+/* GRID */
+.secret-grid{
+  display: grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap: 25px;
+}
+
+/* ITEM */
+.secret-item{
+  position: relative;
+
+  height: 240px;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.secret-item img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* DOWNLOAD */
+.download-btn{
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.15);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .secret-photo-card{
+    height: 240px;
+    border-radius: 22px;
+  }
+
+  .secret-overlay{
+    padding: 25px;
+  }
+
+  .secret-overlay h2{
+    font-size: 32px;
+  }
+
+  .secret-popup-box{
+    width: 90%;
+    padding: 30px 22px;
+  }
+
+  .secret-gallery{
+    padding: 70px 5%;
+  }
+
+  .secret-gallery-top h2{
+    font-size: 38px;
+  }
+
+  .secret-grid{
+    grid-template-columns: 1fr;
+  }
+
+}
